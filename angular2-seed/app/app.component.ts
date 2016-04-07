@@ -10,7 +10,7 @@ import {ZippyComponent} from './zippy.component';
       Content can see my stuff
     </zippy>
     <zippy title="titre 2">
-      lorem ipsum TweetsComponent
+      lorem ipsum TweetsComponent test
     </zippy>
     `,
     directives: [ZippyComponent]

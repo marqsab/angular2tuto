@@ -27,7 +27,7 @@ System.register(['angular2/core', './zippy.component'], function(exports_1, cont
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <zippy title=\"titre 1\">\n      Content can see my stuff\n    </zippy>\n    <zippy title=\"titre 2\">\n      lorem ipsum TweetsComponent\n    </zippy>\n    ",
+                        template: "\n    <zippy title=\"titre 1\">\n      Content can see my stuff\n    </zippy>\n    <zippy title=\"titre 2\">\n      lorem ipsum TweetsComponent test\n    </zippy>\n    ",
                         directives: [zippy_component_1.ZippyComponent]
                     }), 
                     __metadata('design:paramtypes', [])
