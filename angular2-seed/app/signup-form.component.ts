@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {ControlGroup,Control,Validators} from 'angular2/common'
+import {ControlGroup,Control,Validators,FormBuilder} from 'angular2/common'
 
 @Component({
     selector: 'signup-form',
@@ -8,6 +8,14 @@ import {ControlGroup,Control,Validators} from 'angular2/common'
 export class SignUpFormComponent {
 
 form:ControlGroup;
+
+
+constructor(fb : FormBuilder){
+  this.form=fb.group({
+    username:['',Validators.required],
+    password:['',Validators.required]
+  })
+}
 // form = new ControlGroup({
 //   username: new Control('',Validators.required),
 //   password: new Control('',Validators.required)
