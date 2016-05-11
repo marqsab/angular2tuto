@@ -8,17 +8,13 @@ System.register([], function(exports_1, context_1) {
             PasswordValidators = (function () {
                 function PasswordValidators() {
                 }
-                PasswordValidators.shouldMatch = function (control) {
-                    return new Promise(function (resolve, reject) {
-                        setTimeout(function () {
-                            if (control.value == "marc") {
-                                resolve({ shouldBeUnique: true });
-                            }
-                            else {
-                                resolve(null);
-                            }
-                        }, 1000);
-                    });
+                PasswordValidators.shouldMatch = function (group) {
+                    var newPassword = group.find(newPassword);
+                    var confirmPassword = group.find(confirmPassword);
+                    if (newPassword != confirmPassword) {
+                        return { shouldMatch: true };
+                    }
+                    return null;
                 };
                 return PasswordValidators;
             }());

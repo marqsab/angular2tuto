@@ -1,17 +1,14 @@
-import {Control} from 'angular2/common';
+import {ControlGroup} from 'angular2/common';
 
 export class PasswordValidators{
 
-    static shouldMatch(control: Control){
-      return new Promise((resolve, reject)=>{
-        setTimeout(function(){
-          if(control.value == "marc"){
-            resolve({shouldBeUnique: true});
-          }else{
-            resolve(null);
-          }
-        },1000);
-      })
+    static shouldMatch(group: ControlGroup){
+      var newPassword = group.find(newPassword);
+      var confirmPassword = group.find(confirmPassword);
+      if(newPassword != confirmPassword){
+          return {shouldMatch : true};
+      }
+      return null;
     }
 
 

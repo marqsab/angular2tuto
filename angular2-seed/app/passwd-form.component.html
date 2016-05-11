@@ -21,6 +21,7 @@
         <input id="confirmPassword" type="password" class="form-control" ngControl="confirmPassword" #confirmPassword="ngForm">
         <div *ngIf="confirmPassword.touched && confirmPassword.errors">
         <div *ngIf="confirmPassword.errors.required " class="alert alert-danger">field is required</div>
+        <div *ngIf="form.errors.shouldMatch " class="alert alert-danger">field must match</div>
       </div>
     </div>
 

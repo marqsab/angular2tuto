@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {ControlGroup,Control,Validators,FormBuilder} from 'angular2/common'
-
+import {PasswordValidators} from './passwordValidators';
 
 @Component({
     selector: 'passwd-form',
@@ -21,9 +21,10 @@ constructor(fb : FormBuilder){
                   Validators.minLength(5)
                                 ])],
     confirmPassword:['',Validators.compose([
-                  Validators.required
+                  Validators.required,
+
                 ])]
-  })
+  },{validator: PasswordValidators.shouldMatch})
 }
 // form = new ControlGroup({
 //   username: new Control('',Validators.required),
